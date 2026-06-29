@@ -384,6 +384,13 @@ static inline YORUNVM_StatusTypeDef YORUNVM_FlashWrite(uint32_t addr, const void
     YORUNVM_StatusTypeDef st;
     const uint8_t *src = (const uint8_t *)buf;
     uint32_t cur;
+#if (YORUNVM_FLASH_WRITE_UNIT != 0u)
+  #if defined(__GNUC__) || defined(__clang__)
+    uint8_t flashword_buf[YORUNVM_FLASH_WRITE_UNIT] __attribute__((aligned(YORUNVM_FLASH_WRITE_UNIT)));
+  #else
+    uint8_t flashword_buf[YORUNVM_FLASH_WRITE_UNIT];
+  #endif
+#endif
 
     if ((buf == (const void *)0) && (len != 0u)) {
         return YORUNVM_INVALID_PARAM;
@@ -407,7 +414,13 @@ static inline YORUNVM_StatusTypeDef YORUNVM_FlashWrite(uint32_t addr, const void
     }
 
     for (cur = 0u; cur < len; cur += YORUNVM_FLASH_WRITE_UNIT) {
-        if (YORUNVM_FLASH_PROGRAM_CALL(addr + cur, src + cur) != HAL_OK) {
+        {
+            uint32_t i;
+            for (i = 0u; i < YORUNVM_FLASH_WRITE_UNIT; ++i) {
+                flashword_buf[i] = src[cur + i];
+            }
+        }
+        if (YORUNVM_FLASH_PROGRAM_CALL(addr + cur, flashword_buf) != HAL_OK) {
             (void)HAL_FLASH_Lock();
             YORUNVM_UNLOCK();
             return YORUNVM_WRITE_ERROR;
