@@ -23,6 +23,7 @@ Yorunvm 是一个面向 STM32 片上非易失性存储的轻量级单头文件�
 > | [Yorunvm](https://github.com/ExMikuPro/Yorunvm) | STM32 片上 NVM / Flash 访问辅助库 |
 > | [Yorukv](https://github.com/ExMikuPro/Yorukv) | 轻量级 KV 配置库 |
 > | [Yorubench](https://github.com/ExMikuPro/Yorubench) | 轻量级性能测量库 |
+> | [Yoruassert](https://github.com/ExMikuPro/Yoruassert.git) | 轻量级断言辅助库 |
 
 ---
 
