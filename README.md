@@ -12,6 +12,20 @@ Repository:
 
 ---
 
+> **Yoru Series**
+>
+> A family of lightweight utility libraries for STM32 HAL. Each library can be used independently or combined as needed.
+>
+> | Library | Role |
+> | --- | --- |
+> | [Yorulog](https://github.com/ExMikuPro/Yorulog) | Lightweight UART logger |
+> | [Yorush](https://github.com/ExMikuPro/Yorush) | Lightweight UART shell / command parser |
+> | [Yorunvm](https://github.com/ExMikuPro/Yorunvm) | STM32 on-chip NVM / Flash access helper |
+> | [Yorukv](https://github.com/ExMikuPro/Yorukv) | Lightweight KV configuration library |
+> | [Yorubench](https://github.com/ExMikuPro/Yorubench) | Lightweight performance measurement library |
+
+---
+
 ## Current Scope
 
 Current stage:
