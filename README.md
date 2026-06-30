@@ -2,7 +2,7 @@
 
 Yorunvm is a lightweight single-header NVM helper for STM32 on-chip non-volatile memory.
 
-The current stage focuses on STM32 internal Flash access. The goal is not to build a large storage framework, but to provide a small, predictable, and easy-to-integrate API for on-chip NVM access with clear range protection.
+It is intended for controlled STM32 on-chip Flash / EEPROM access. The goal is not to build a large storage framework, but to provide a small, predictable, and easy-to-integrate API for on-chip NVM access with clear range protection.
 
 It does not depend on `printf`, dynamic memory allocation, or file-system style abstractions.
 
@@ -14,7 +14,7 @@ Repository:
 
 > **Yoru Series**
 >
-> A family of lightweight utility libraries for STM32 HAL. Each library can be used independently or combined as needed.
+> Related lightweight utility libraries for STM32 HAL.
 >
 > | Library | Role |
 > | --- | --- |
